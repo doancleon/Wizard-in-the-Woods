@@ -505,6 +505,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &556312768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556312769}
+  m_Layer: 2
+  m_Name: WandDirection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &556312769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556312768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.59, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1398257021}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160082716
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,9 +592,10 @@ GameObject:
   - component: {fileID: 1398257020}
   - component: {fileID: 1398257022}
   - component: {fileID: 1398257023}
-  m_Layer: 0
+  - component: {fileID: 1398257024}
+  m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -628,9 +659,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398257019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.211, y: -1.411, z: 0}
+  m_LocalPosition: {x: -0.71, y: -1.54, z: 0}
   m_LocalScale: {x: 0.3498997, y: 0.12559672, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 556312769}
   m_Father: {fileID: 1160082718}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -681,3 +713,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.833521, y: 8.831327}
   m_EdgeRadius: 0
+--- !u!114 &1398257024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398257019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b879af5fa45314385e23160e4a877e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wandDirection: {fileID: 556312769}
+  starFire: {fileID: 1612642504311035874, guid: 3fabaa73fb8bb1c449b273c9def508ab, type: 3}
