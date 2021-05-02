@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float speed = 1.5f;
-    private float jumpH = 7.5f;
+    private float speed = 1.1f;
+    private float jumpH = 5.5f;
     private bool grounded = true;
     public Transform feet;
     public LayerMask groundL;

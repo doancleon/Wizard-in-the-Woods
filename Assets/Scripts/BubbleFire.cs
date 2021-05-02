@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BubbleFire : MonoBehaviour
 {
-    public float speed = 20f;
+    public float speed = 1f;
     public Rigidbody2D wandRigidBody;
 
     // Start is called before the first frame update
