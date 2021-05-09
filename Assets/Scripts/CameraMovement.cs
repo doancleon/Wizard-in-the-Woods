@@ -19,6 +19,7 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         camPos = player.position;
+        camPos.y += 1;
         camPos.z = -20;
         transform.position = camPos;
     }

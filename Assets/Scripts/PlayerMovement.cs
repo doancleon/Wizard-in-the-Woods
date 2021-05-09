@@ -59,4 +59,12 @@ public class PlayerMovement : MonoBehaviour
         walk_animator.SetBool("Walking", false);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<honey>())
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
 }
