@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 1.1f;
     private float jumpH = 5.5f;
     private bool grounded = true;
+    public int numJumps = 1;
+    public bool doubleJump = false;
     public Transform feet;
     public LayerMask groundL;
     public Animator walk_animator;
@@ -21,13 +23,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if ((Input.GetKeyDown(KeyCode.Space) && grounded) || (Input.GetKeyDown(KeyCode.Space) && numJumps > 0))
         {
             rb.AddForce(Vector3.up * jumpH, ForceMode2D.Impulse);
+            numJumps -= 1;
         }
 
         //check if player is on the ground
         grounded = Physics2D.OverlapCircle(feet.position, .2f, groundL);
+
+        if (doubleJump && grounded)
+            numJumps = 2;
     }
 
     private void FixedUpdate()
@@ -38,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             rb.transform.Translate(new Vector2(speed/10f, 0));
             if (grounded)
             {
-                StartCoroutine("walk_animation");
+                StartCoroutine("Walk_Animation");
             }
         }
         else if (Input.GetKey(KeyCode.D))   //right
@@ -47,12 +53,12 @@ public class PlayerMovement : MonoBehaviour
             rb.transform.Translate(new Vector2(speed/10f, 0));
             if (grounded)
             {
-                StartCoroutine("walk_animation");
+                StartCoroutine("Walk_Animation");
             }
 
         }
     }
-    IEnumerator walk_animation()
+    IEnumerator Walk_Animation()
     {
         walk_animator.SetBool("Walking", true);
         yield return new WaitForSeconds(0.01f);

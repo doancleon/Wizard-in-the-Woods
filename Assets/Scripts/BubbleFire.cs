@@ -13,5 +13,13 @@ public class BubbleFire : MonoBehaviour
         wandRigidBody.velocity = transform.right * speed;
     }
 
+    private void OnTriggerEnter2D(Collider2D butterfly)
+    {
+        if (butterfly.gameObject.tag == "bf")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
 }

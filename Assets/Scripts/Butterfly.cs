@@ -22,4 +22,12 @@ public class Butterfly : MonoBehaviour
 
         transform.position = changedPos;
     }
+
+    private void OnTriggerEnter2D(Collider2D bubble)
+    {
+        if (bubble.gameObject.tag == "bubble")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

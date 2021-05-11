@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Saw
   - ground
+  - bf
+  - bubble
   layers:
   - Default
   - TransparentFX

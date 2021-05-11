@@ -19,12 +19,12 @@ public class PlayerWand : MonoBehaviour
         FaceMouse();
         if (Input.GetButtonDown("Fire1") && canShoot == true)
         {
-            StartCoroutine("attack_animation");
+            StartCoroutine("Attack_Animation");
         }
     }
 
 
-    IEnumerator attack_animation()
+    IEnumerator Attack_Animation()
     {
         attack_animator.SetBool("Attacking", true);
         canShoot = false;
