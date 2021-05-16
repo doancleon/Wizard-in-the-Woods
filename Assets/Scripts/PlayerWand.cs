@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerWand : MonoBehaviour
 {
     public Transform wandDirection;
-    public GameObject starFire;
+    public GameObject bubbleFire;
+    public GameObject honeyFire;
     Vector2 direction;
     public Animator attack_animator;
     private bool canShoot = true;
+    public bool hasHoney = false;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +22,12 @@ public class PlayerWand : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && canShoot == true)
         {
             StartCoroutine("Attack_Animation");
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && hasHoney == true)
+        {
+            GameObject honeyF = Instantiate(honeyFire, wandDirection.position, wandDirection.rotation);
+            hasHoney = false;
         }
     }
 
@@ -43,8 +51,8 @@ public class PlayerWand : MonoBehaviour
 
     void Shoot()
     {
-        GameObject starF = Instantiate(starFire, wandDirection.position, wandDirection.rotation);
-        Destroy(starF, 1);
+        GameObject bubbleF = Instantiate(bubbleFire, wandDirection.position, wandDirection.rotation);
+        Destroy(bubbleF, 1);
 
     }
 }

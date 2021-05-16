@@ -8,10 +8,13 @@ public class GameManager : MonoBehaviour
     private GameObject[] butterflies;
     public GameObject player;
     private PlayerMovement playerM;
+    public GameObject uiObject;
 
     // Start is called before the first frame update
     void Start()
     {
+        uiObject = GameObject.FindWithTag("bftag");
+        uiObject.SetActive(false);
         butterflies = GameObject.FindGameObjectsWithTag("bf");
         playerM = player.GetComponent<PlayerMovement>();
     }
@@ -20,12 +23,19 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         butterflies = GameObject.FindGameObjectsWithTag("bf");
-
         if (butterflies.Length == 0)
         {
             Debug.Log("0 bfs");
             playerM.doubleJump = true;
-            playerM.numJumps = 2;
+            uiObject.SetActive(true);
+            StartCoroutine("WaitForSec");
+
         }
+    }
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(uiObject);
+        Destroy(gameObject);
     }
 }

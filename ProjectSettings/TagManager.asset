@@ -8,6 +8,8 @@ TagManager:
   - ground
   - bf
   - bubble
+  - tiptext
+  - bftag
   layers:
   - Default
   - TransparentFX
