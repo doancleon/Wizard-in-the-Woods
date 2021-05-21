@@ -10,7 +10,7 @@ public class Bear : MonoBehaviour
     public Transform player;
     private float chaseRange = 5f;
     private Rigidbody2D bearrb;
-    public float chaseMoveSpeed = 1f;
+    private float chaseMoveSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class Bear : MonoBehaviour
     {
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -34,7 +34,6 @@ public class Bear : MonoBehaviour
         }
        else
         {
-
             changedPos = transform.position;
             changedPos.x += (Mathf.PingPong(Time.time, walkDist) - (walkDist / 2)) * .005f;
 
@@ -46,12 +45,12 @@ public class Bear : MonoBehaviour
     {
         if (transform.position.x < player.position.x)
         {
-            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * chaseMoveSpeed/2.5f;
+            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * chaseMoveSpeed/1.5f;
 
         }
         else 
         {
-            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * chaseMoveSpeed/2.5f;
+            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * chaseMoveSpeed/1.5f;
 
         }
     }

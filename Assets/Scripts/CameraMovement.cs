@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         camPos = player.position;
-        camPos.z = -20;
+        camPos.z = -30;
         transform.position = camPos;
     }
 
@@ -19,8 +19,7 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         camPos = player.position;
-        camPos.y += 1;
-        camPos.z = -20;
+        camPos.z = -30;
         transform.position = camPos;
     }
 }
