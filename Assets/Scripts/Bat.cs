@@ -29,10 +29,5 @@ public class Bat : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (collider.gameObject.tag == "Player")
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("FirstScene");
-        }
     }
 }

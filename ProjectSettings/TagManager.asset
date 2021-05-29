@@ -12,6 +12,7 @@ TagManager:
   - bftag
   - bat
   - playerfeet
+  - spider
   layers:
   - Default
   - TransparentFX

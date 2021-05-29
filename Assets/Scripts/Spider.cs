@@ -55,16 +55,9 @@ public class Spider : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("FirstScene");
-        }
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "bubble")
         {
             Destroy(gameObject);
         }
