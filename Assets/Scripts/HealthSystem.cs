@@ -33,7 +33,7 @@ public class HealthSystem : MonoBehaviour
 
             invincible = true;
 
-            if (health <= -1)
+            if (health == 0)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("FirstScene");
             }

@@ -43,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (doubleJump & grounded)
             numJumps = 1;
+
+
+        //check if player falls through world
+        if (transform.position.y <= -20)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("FirstScene");
+
     }
 
     private void FixedUpdate()
